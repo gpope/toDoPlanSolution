@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lists>
+  <list>
+    <name>Ronilačka oprema</name>
+    <openitems>
+      <item>Odjelo</item>
+      <item>Maska i disalica</item>
+      <item>Peraje</item>
+      <item>Rukavice</item>
+      <item>Pojas s olovom</item>
+    </openitems>
+    <doneitems>
+      <item>Ribolovna dozvola</item>
+      <item>Sigurnosna bova</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Trip to Thailand</name>
+    <openitems>
+      <item>Karta</item>
+      <item>Zdravstveno osiguranje</item>
+      <item>Putovnica</item>
+      <item>Lonely Planet</item>
+      <item>Baterija za glavu</item>
+      <item>Swiss knife</item>
+    </openitems>
+    <doneitems>
+      <item>US$</item>
+      <item>Fotoaparat</item>
+      <item>First Aid</item>
+      <item>Ruksak</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Valkira</name>
+    <openitems>
+      <item>Portfolio</item>
+      <item>Slike</item>
+      <item>Layout</item>
+      <item>Tekstovi</item>
+      <item>Video</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>RK Zagreb</name>
+    <openitems>
+      <item>Igrači</item>
+      <item>Trener</item>
+      <item>Dvorana</item>
+      <item>Transferi</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak s upravom</item>
+      <item>Live TV</item>
+      <item>Dresovi</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Radio Antena</name>
+    <openitems>
+      <item>DJ</item>
+      <item>Radio live streaming</item>
+      <item>Logo</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak</item>
+      <item>Tekstovi</item>
+      <item>Video</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Afganistan</name>
+    <openitems>
+      <item>Putovnica</item>
+      <item>Visa</item>
+      <item>Mobitel</item>
+    </openitems>
+  </list>
+  <list>
+    <name>Jedrenje Jadran</name>
+  </list>
+  <list>
+    <name>SERBON</name>
+  </list>
+</lists>

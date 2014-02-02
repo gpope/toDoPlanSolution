@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{199F309A-C4F6-475E-BE88-7B2A79831434}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>toDoPlan</RootNamespace>
+    <AssemblyName>toDoPlan</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="3.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="4.xml" />
+    <Content Include="Content\default.css" />
+    <Content Include="default.html" />
+    <Content Include="JavaScript1.js" />
+    <Content Include="Scripts\REDIPS_drag\changes.txt" />
+    <Content Include="Scripts\REDIPS_drag\example00\index1.html" />
+    <Content Include="Scripts\REDIPS_drag\example00\index2.html" />
+    <Content Include="Scripts\REDIPS_drag\example00\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example00\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example01\icon_smile.gif" />
+    <Content Include="Scripts\REDIPS_drag\example01\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example01\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example01\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example02\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example02\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example02\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example03\ajax\readme.txt" />
+    <Content Include="Scripts\REDIPS_drag\example03\ajax\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example03\database.sql" />
+    <Content Include="Scripts\REDIPS_drag\example03\docs\readme.txt" />
+    <Content Include="Scripts\REDIPS_drag\example03\docs\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example03\index_static.html" />
+    <Content Include="Scripts\REDIPS_drag\example03\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example03\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example04\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example04\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example04\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example05\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example05\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example05\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example06\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example06\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example06\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example07\index1.html" />
+    <Content Include="Scripts\REDIPS_drag\example07\index2.html" />
+    <Content Include="Scripts\REDIPS_drag\example07\script1.js" />
+    <Content Include="Scripts\REDIPS_drag\example07\script2.js" />
+    <Content Include="Scripts\REDIPS_drag\example07\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example08\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example08\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example08\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example09\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example09\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example09\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example10\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example10\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example10\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example11\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example11\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example11\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example12\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example12\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example12\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example13\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example13\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example13\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example14\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example14\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example14\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example15\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example15\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example15\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example16\flower.png" />
+    <Content Include="Scripts\REDIPS_drag\example16\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example16\readme.txt" />
+    <Content Include="Scripts\REDIPS_drag\example16\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example16\style-print.css" />
+    <Content Include="Scripts\REDIPS_drag\example16\style-screen.css" />
+    <Content Include="Scripts\REDIPS_drag\example17\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example17\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example17\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example18\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example18\index1.html" />
+    <Content Include="Scripts\REDIPS_drag\example18\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example18\script1.js" />
+    <Content Include="Scripts\REDIPS_drag\example18\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example19\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example19\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example19\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example20\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example20\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example20\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example21\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example21\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example21\simple\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example21\simple\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example21\simple\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example21\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example22\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example22\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example23\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example23\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example23\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\app_reference.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\calculation.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\category.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\contact.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\date_picker.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\duration.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\google_map.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\image.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\link.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\money.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\number.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\progress_slider.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\question.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\text.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\unknown.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\component\video_sharing.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example24\redips-table-min.js" />
+    <Content Include="Scripts\REDIPS_drag\example24\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example24\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example25\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example25\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example25\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example26\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example26\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example26\style.css" />
+    <Content Include="Scripts\REDIPS_drag\example27\index.html" />
+    <Content Include="Scripts\REDIPS_drag\example27\script.js" />
+    <Content Include="Scripts\REDIPS_drag\example27\style.css" />
+    <Content Include="Scripts\REDIPS_drag\header.js" />
+    <Content Include="Scripts\REDIPS_drag\index.html" />
+    <Content Include="Scripts\REDIPS_drag\redips-drag-min.js" />
+    <Content Include="Scripts\REDIPS_drag\redips-drag-source.js" />
+    <Content Include="Scripts\REDIPS_drag\style.css" />
+    <Content Include="Slike\desno.jpg" />
+    <Content Include="Slike\ljevo.jpg" />
+    <Content Include="_lists.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="2.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\toDoPlanLibrary.js" />
+    <Content Include="Slike\todo_logo.png" />
+    <Content Include="test.aspx" />
+    <Content Include="servisi.asmx" />
+    <Content Include="user.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servisi.asmx.cs">
+      <DependentUpon>servisi.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\REDIPS_drag\example00\ajax.php" />
+    <Content Include="Scripts\REDIPS_drag\example01\multiple-parameters-json.php" />
+    <Content Include="Scripts\REDIPS_drag\example01\multiple-parameters.php" />
+    <Content Include="Scripts\REDIPS_drag\example03\ajax\db_delete.php" />
+    <Content Include="Scripts\REDIPS_drag\example03\ajax\db_save.php" />
+    <Content Include="Scripts\REDIPS_drag\example03\config.php" />
+    <Content Include="Scripts\REDIPS_drag\example03\db_save.php" />
+    <Content Include="Scripts\REDIPS_drag\example03\index.php" />
+    <Content Include="Scripts\REDIPS_drag\example16\get-content.php" />
+    <Content Include="Scripts\REDIPS_drag\example22\db_ajax.php" />
+    <Content Include="Scripts\REDIPS_drag\example22\db_save.php" />
+    <Content Include="Scripts\REDIPS_drag\example22\index.php" />
+    <Content Include="Scripts\REDIPS_drag\example22\mylib.php" />
+    <Content Include="Scripts\REDIPS_drag\example23\db_save.php" />
+    <Content Include="Scripts\REDIPS_drag\example24\config.php" />
+    <Content Include="Scripts\REDIPS_drag\example24\db_field.php" />
+    <Content Include="Scripts\REDIPS_drag\example24\db_save.php" />
+    <Content Include="Scripts\REDIPS_drag\readme.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50048/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

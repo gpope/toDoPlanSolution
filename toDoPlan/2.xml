@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lists>
+  <list>
+    <name>Valkira</name>
+    <openitems>
+      <item>Portfolio</item>
+      <item>Slike</item>
+      <item>Layout</item>
+      <item>Tekstovi</item>
+      <item>Video</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>RK Zagreb</name>
+    <openitems>
+      <item>Igrači</item>
+      <item>Trener</item>
+      <item>Dvorana</item>
+      <item>Transferi</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak s upravom</item>
+      <item>Live TV</item>
+      <item>Dresovi</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Radio Antena</name>
+    <openitems>
+      <item>DJ</item>
+      <item>Radio live streaming</item>
+      <item>Logo</item>
+    </openitems>
+    <doneitems>
+      <item>Sastanak</item>
+      <item>Tekstovi</item>
+      <item>Video</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>Mahune</name>
+  </list>
+  <list>
+    <name>Grah</name>
+  </list>
+</lists>
