@@ -49,6 +49,7 @@ function drop(ev) {
     }
     el.appendChild(document.getElementById(eleid));
     ev.preventDefault();
+    
 }
 
 /*###########################################################################*/
@@ -114,6 +115,11 @@ function changeStatus(id) {
         cklon.setAttribute('draggable', true);
         cklon.addEventListener("dragstart", function (ev) { drag(ev); }, false);
         var dIL = document.getElementById("doneItemList").firstChild;
+        if (dIL == undefined) {
+            dIL = document.getElementById("doneItemList");
+            var tbody = document.createElement('tbody');
+            dIL.appendChild(tbody);
+        }
         dIL.appendChild(cklon);
         preb.parentNode.removeChild(preb);
     } 
