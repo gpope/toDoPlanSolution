@@ -70,12 +70,12 @@ function addToDoItem() {
         var tr = document.createElement("tr");
         var items = "item";
         
-        //tr.addEventListener('click', deleteToDoItem, false);
+        //tr.addEventListener('click', editItem, false);
         tr.setAttribute('class', items);
         tr.setAttribute('draggable', true);
         tr.setAttribute('id', itemId);
         
-        var task = "<td class = 'input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + txtInput + "' /></td><td onclick = 'deleteToDoItem(this.parentNode.id)' class='itemTdName'>" + txtInput + "</td>";
+        var task = "<td class = 'input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + txtInput + "' /></td><td onclick = 'editItem(this.parentNode.id)' class='itemTdName'>" + txtInput + "</td>";
         
         tr.innerHTML = task;
         var list = document.getElementById("toDoItemList");
@@ -95,7 +95,39 @@ function addToDoItem() {
         itemId = "item" + itemCount;
         document.getElementById('toDoInput').value = "";
         document.getElementById('toDoInput').focus();
+        //ovdje kreće poziv za save task in xml
+        var remVal = txtInput;
+        var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
+
+        var poruka = "taskName=" + remVal + "&projName=" + nazProj;
+
+        var request = null;
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var the_URL = "servisi.asmx/AddTask";
+
+        if (request) {
+            request.open("POST", the_URL);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            request.onreadystatechange =
+            function () {
+                if (request.readyState == 4) {
+
+                    document.getElementById("webservice").innerHTML = request.responseText;
+                    //Osvježava popis projekata u <aside>
+                    GetSessionNick();
+                }
+            }
+            request.send(poruka);
+        } else {
+            alert("Problemi u radu servera, pokušajte kasnije.");
+        }
+        //ovdje završava poziv save task in xml
     }
+    
 }
 function changeStatus(id) {
    
@@ -103,8 +135,13 @@ function changeStatus(id) {
     var unchecked = "ItemTdName";
     var che = "checked";
     var inp = document.getElementById(id).firstChild.childNodes[0];
+    
     var red = document.getElementById(id).firstChild.nextSibling; 
     var preb = document.getElementById(id);
+    var remVal = document.getElementById(id).childNodes[1].childNodes[0].nodeValue;//naziv zadatka kojem se mijenja status
+    var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;//naziv projekta
+
+ 
     if (inp.checked) {
         //zadatak čekiran, prebaci ga u listu čekiranih   
         red.setAttribute('class', checked);
@@ -122,6 +159,41 @@ function changeStatus(id) {
         }
         dIL.appendChild(cklon);
         preb.parentNode.removeChild(preb);
+
+        //podaci za slanje servisu ChangeTaskStatus(taskName, parentId, projName)
+        //var remVal
+        //var remTable
+        //var nazProj
+        //start of service
+        var remTable = "toDoItemList";
+        var poruka = "taskName=" + remVal + "&parentId=" + remTable + "&projName=" + nazProj;
+
+        var request = null;
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var the_URL = "servisi.asmx/ChangeTaskStatus";
+
+        if (request) {
+            request.open("POST", the_URL);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            request.onreadystatechange =
+            function () {
+                if (request.readyState == 4) {
+
+                    document.getElementById("webservice").innerHTML = request.responseText;
+                    //Osvježava popis projekata u <aside>
+                    GetSessionNick();
+                }
+            }
+            request.send(poruka);
+        } else {
+            alert("Problemi u radu servera, pokušajte kasnije.");
+        }
+        //end of service
+        //kraj poziva servisu za mijenjanje statusa u xml
     } 
     else {
         //zadatak odčekiran, prebaci ga u listu odčekiranih
@@ -133,8 +205,53 @@ function changeStatus(id) {
         uklon.setAttribute('draggable', true);
         uklon.addEventListener("dragstart", function (ev) { drag(ev); }, false);
         var tDIL = document.getElementById("toDoItemList").firstChild;
+       
+
+        //
+        if (tDIL == undefined) {
+            tDIL = document.getElementById("toDoItemList");
+            var tableBody = document.createElement('tbody');
+            tDIL.appendChild(tableBody);
+        }
+        //
         tDIL.appendChild(uklon);
         preb.parentNode.removeChild(preb);
+
+        //poziv servisu za mijenjane statusa u xmlu
+        //podaci za slanje servisu ChangeTaskStatus(taskName, parentId, projName)
+        //var remVal 
+        var remTable = "doneItemList";
+        var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
+        //start of service
+
+        var poruka = "taskName=" + remVal + "&parentId=" + remTable + "&projName=" + nazProj;
+
+        var request = null;
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var the_URL = "servisi.asmx/ChangeTaskStatus";
+
+        if (request) {
+            request.open("POST", the_URL);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            request.onreadystatechange =
+            function () {
+                if (request.readyState == 4) {
+
+                    document.getElementById("webservice").innerHTML = request.responseText;
+                    //Osvježava popis projekata u <aside>
+                    GetSessionNick();
+                }
+            }
+            request.send(poruka);
+        } else {
+            alert("Problemi u radu servera, pokušajte kasnije.");
+        }
+        //end of service
+        //kraj poziva servisu za mijenjanje statusa u xml
     }
 
     
@@ -163,13 +280,47 @@ function brisiIme(parid) {
         if (tr.parentNode.childNodes[i].id == parid)
             moj = i;
     var rod = tr.parentNode;
-    var dije = rod.childNodes[moj];
-    alert(moj);
+    
+    var dije = rod.childNodes[moj]; 
     //rod.removeChild(rod.childNodes[moj]);
     rod.removeChild(dije);
+    //podaci za slanje servisu DeleteTask(taskName, parentId, projName)
+    var remVal = dije.childNodes[1].childNodes[0].value;
+    var remTable = rod.parentNode.id;
+    var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
+    //bool DeleteTask(string taskName, string parentId, string projName)
+    //start of service
+
+        var poruka = "taskName=" + remVal + "&parentId=" + remTable + "&projName=" + nazProj;
+
+        var request = null;
+        if (window.XMLHttpRequest) {
+            request = new XMLHttpRequest();
+        } else {
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var the_URL = "servisi.asmx/DeleteTask";
+
+        if (request) {
+            request.open("POST", the_URL);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            request.onreadystatechange =
+            function () {
+                if (request.readyState == 4) {
+                    
+                    document.getElementById("webservice").innerHTML = request.responseText;
+                    //Osvježava popis projekata u <aside>
+                    GetSessionNick();
+                }
+            }
+            request.send(poruka);
+        } else {
+            alert("Problemi u radu servera, pokušajte kasnije.");
+        }
+    //end of service
 }
 // Funkcija izbornika za izmjeni ili obriši
-function deleteToDoItem(id) {
+function editItem(id) {
     
    // var d = confirm("Jeste li sigurni da želite obrisati stavku?");
     //if (d == true) {
@@ -207,7 +358,7 @@ function odustaniOdZadatka() {
 
 /*###########################################################################*/
 //U <aside> nalazi se popis postojećih lista, klikom na neku od njih popunjavaju
-//se polja za aktivnim i završenim taskovima, koji se mogu brisati clickom, i
+//se polja sa aktivnim i završenim taskovima, koji se mogu brisati clickom, i
 //drag and drop-ati
 /*###########################################################################*/
 function addList(listname) {
@@ -259,7 +410,7 @@ function addList(listname) {
                     var tasks = "";
                     if (openItems != null) {
                         for (var i = 0; i < openItems.childNodes.length - 1; i += 2) {
-                            tasks += "<tr class='item' draggable='true' id='" + itemId + "'><td class='input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + openItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "' /></td><td class='itemTdName' onclick = 'deleteToDoItem(this.parentNode.id)'>" + openItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "</td></tr>";
+                            tasks += "<tr class='item' draggable='true' id='" + itemId + "'><td class='input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + openItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "' /></td><td class='itemTdName' onclick = 'editItem(this.parentNode.id)'>" + openItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "</td></tr>";
                             
                             itemCount++;
                             itemId = "item" + itemCount;
@@ -280,7 +431,7 @@ function addList(listname) {
                     var tasks = "";
                     if (doneItems != null) {
                         for (var i = 0; i < doneItems.childNodes.length - 1; i += 2) {
-                            tasks += "<tr class='item' draggable='true' id='" + itemId + "'><td class='input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' checked /><input type='text' class='skriveni' style='display: none;' value='" + openItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "' /></td><td class='doneItemTdName' onclick = 'deleteToDoItem(this.parentNode.id)'>" + doneItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "</td></tr>";
+                            tasks += "<tr class='item' draggable='true' id='" + itemId + "'><td class='input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' checked /><input type='text' class='skriveni' style='display: none;' value='" + doneItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "' /></td><td class='doneItemTdName' onclick = 'editItem(this.parentNode.id)'>" + doneItems.childNodes[i].nextSibling.childNodes[0].nodeValue + "</td></tr>";
                             itemCount++;
                             itemId = "item" + itemCount;
                         }
@@ -293,7 +444,7 @@ function addList(listname) {
                     var li = document.getElementsByClassName("item");
                     for (var l = 0; l < li.length; l++) {
                         li[l].addEventListener("dragstart", function (ev) { drag(ev); }, false);
-                        //li[l].addEventListener('click', deleteToDoItem, false);
+                        //li[l].addEventListener('click', editItem, false);
                     }
                     //kraj ubačenog
                 }

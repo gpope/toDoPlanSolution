@@ -8,7 +8,8 @@
     <lists>
       <list>Ronilačka oprema</list>
       <list>Trip to Thailand</list>
-      <list>DOM i JavaScript</list>
+      <list>DOM</list>
+      <list>JavaScript</list>
     </lists>
   </user>
   <user>
@@ -20,25 +21,6 @@
       <list>Valkira</list>
       <list>RK Zagreb</list>
       <list>Radio Antena</list>
-      <list>Mahune</list>
-      <list>Grah</list>
-    </lists>
-  </user>
-  <user>
-    <name>Krešo</name>
-    <userid>3</userid>
-    <password>kreso</password>
-    <email>kreso@kreso.com</email>
-    <lists>
-      <list>Afghanistan</list>
-    </lists>
-  </user>
-  <user>
-    <name>Tome</name>
-    <userid>4</userid>
-    <password>tome</password>
-    <email>tome@tome.com</email>
-    <lists>
     </lists>
   </user>
 </users>

@@ -65,6 +65,7 @@ footer {
 img {
     width: 60px;
     height: 60px;
+    padding-top: 10px;
 }
 li::first-letter {
     text-transform: capitalize;
@@ -83,7 +84,7 @@ a {
 /*Lista s popisom projekata*/
 .list {
     font-size: 14px;
-    border: 1px solid red;
+   /* border: 1px solid red;*/
     
 }
 /*
@@ -142,10 +143,10 @@ a#odustani:active {
 
 /*TESTIRANJE DRAG AND DROP*/
 ul {
-    border: 1px dashed red;
+    /*border: 1px dashed red;*/
 }
 td {
-    border: 1px dashed blue;
+   /* border: 1px dashed blue;*/
 }
 /*sljedeća 3 su polja u kojima su aktivni i gotovi zadaci*/
 .input {
@@ -159,7 +160,7 @@ td {
     background-color: silver;
 }
 #doneItemList, #toDoItemList {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 500px;
     margin-top: 20px;
 }
@@ -168,14 +169,16 @@ td {
 #divDoneItemList, #divToDoItemList {
     position: relative;
     float: left;
-    border: 1px solid green;
+    /*border: 1px solid green;*/
 }
 .red {
     color: red;
 }
+/*
 .doneItemTdName {
     text-decoration: line-through;
 }
+ */
 /*############################################*/
 /*Unos taskova iz xml-a*/
 /*############################################*/
