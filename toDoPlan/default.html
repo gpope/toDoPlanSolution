@@ -2,45 +2,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>TODO</title>
-    <link href="Content/default.css" rel="stylesheet" /> 
+    <link href="CSS/default.css" rel="stylesheet" />
 </head>
 <body>
-    <div id ="container">
+    <div id="container">
         <header>
-            <form id="frmlogin" name="frmlogin" method="post" action="javascript:Prijava()">
-                <label>Email: </label><input type="text" name="username" id="username" />
-                <label>Lozinka: </label><input type="text" name="password" id="password" />
-                <input type="submit" value="Prijava" />
-            </form>
-   
-            <img src="Slike/todo_logo.png" />
+            <div id="logo">
+                <img src="Slike/todo_logo.png" /></div>
+
+            <h1>TODO</h1>
+            <div id="linkPR"><a href="#" onclick="prijavaForm()">Prijava</a> | <a href="#" onclick="regForm()">Registracija</a></div><div id="porukaPrijavljen"></div><br />
+            <br />
+            <div id="prijavaDiv">
+                <form id="frmlogin" name="frmlogin" method="post" action="javascript:Prijava()">
+                    <label>Email: </label>
+                    <input type="text" name="username" id="username" />
+                    <label>Lozinka: </label>
+                    <input type="password" name="password" id="password" />
+                    <input type="submit" value="Prijava" />
+                </form>
+            </div>
+
+            <div id="registracijaDiv">
+                <form id="frmregistracija" name="frmregistracija" method="post"
+                    action="javascript:Registracija()">
+                    <table>
+                        <tr>
+                            <td class="stupac">
+                                <label>Ime: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="imeKorisnika" id="imeKorisnika" /></td>
+                        </tr>
+                        <tr>
+                            <td class="stupac">
+                                <label>Email: </label>
+                            </td>
+                            <td>
+                                <input type="text" name="email" id="email" /></td>
+                        </tr>
+                        <tr>
+                            <td class="stupac">
+                                <label>Lozinka: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="password1" id="password1" /></td>
+                        </tr>
+                        <tr>
+                            <td class="stupac">
+                                <label>Ponovi lozinku: </label>
+                            </td>
+                            <td>
+                                <input type="password" name="password2" id="password2" /></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="submit" value="Registracija" /></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
         </header>
-        <!--<nav><a href="#">Home</a> | <a href="#">Upute</a> | <a href="#">Kontakt</a></nav>-->
         <div id="webservice"></div>
-        <aside></aside> 
-        <div role="main">
+        <aside id="lijevi"></aside>
+        <div role="main" id="central">
             <h1 id="nazivProjekta"></h1>
-            <!--<h1>Dodaj zadatak</h1>-->
             <div id="addItem">
-                <!--
-                <input id="toDoInput" type="text" size="29" onkeydown="Javascript: if (event.keyCode==13) addToDoItem();" />
-                <button onclick="addToDoItem()">OK</button>
-                -->
             </div>
             <div id="divToDoItemList">
                 <h2 id="zadaci"></h2>
-                <table id="toDoItemList" class="todoList" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+                <table id="toDoItemList" class="todoList"></table>
             </div>
             <div id="divDoneItemList">
                 <h2 id="zadaciZavrseni"></h2>
-                <table id="doneItemList" class="todoList" ondrop="drop(event)" ondragover="allowDrop(event)"></table>
+                <table id="doneItemList" class="todoList"></table>
             </div>
-            
+
         </div>
 
-        <footer><!--Sva prava pridržana. FOI&copy;2013.--></footer>
+        <footer>DOM i JavaScript, 2014.</footer>
     </div>
-    <!--<div id="otpad" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
-    <script src="Scripts/toDoPlanLibrary.js"></script>
+    <script src="Scripts/toDoPlan.js"></script>
 </body>
 </html>

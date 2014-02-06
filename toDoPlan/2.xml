@@ -3,23 +3,21 @@
   <list>
     <name>Valkira</name>
     <openitems>
+      <item>Slike</item>
+      <item>Mobitel punjač</item>
     </openitems>
     <doneitems>
-      <item>novi</item>
-    </doneitems>
-  </list>
-  <list>
-    <name>RK Zagreb</name>
-    <openitems>
-    </openitems>
-    <doneitems>
+      <item>Mailovi</item>
+      <item>Sastanak</item>
     </doneitems>
   </list>
   <list>
     <name>Radio Antena</name>
     <openitems>
+      <item>Dizajn</item>
     </openitems>
     <doneitems>
+      <item>Konzultacije</item>
     </doneitems>
   </list>
 </lists>

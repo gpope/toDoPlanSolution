@@ -6,10 +6,7 @@
     <password>goran</password>
     <email>gopopovi@foi.hr</email>
     <lists>
-      <list>Ronilačka oprema</list>
-      <list>Trip to Thailand</list>
-      <list>DOM</list>
-      <list>JavaScript</list>
+      <list>DOM i JavaScript</list>
     </lists>
   </user>
   <user>
@@ -19,7 +16,6 @@
     <email>iva@iva.com</email>
     <lists>
       <list>Valkira</list>
-      <list>RK Zagreb</list>
       <list>Radio Antena</list>
     </lists>
   </user>

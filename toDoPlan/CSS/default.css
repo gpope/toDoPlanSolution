@@ -1,51 +1,50 @@
 ﻿/*############################################*/
 /*Strukturni djelovi web-a*/
 /*############################################*/
-#otpad {
-    position: fixed;
-    left:1100px;
-    top:200px;
-    border: 3px dashed black;
-    width: 50px;
-    height: 50px;
-}
 body {
     font-family: Verdana;
     font-size: 14px;
-      -webkit-user-select: none;
-     -moz-user-select: -moz-none;
-      -ms-user-select: none;
-          user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 h1 {
     font-size: 16px;
-    font-weight:700;
+    font-weight: 700;
     padding-left: 0px;
 }
+
 h2 {
     font-size: 14px;
-    font-weight:700;
+    font-weight: 700;
     padding-left: 0px;
 }
+/*
 #container {
     position: relative;
     margin: 0 auto;
     width: 900px;
-    min-height:600px;
+    min-height: 600px;
 }
+*/
 header {
-    width: 900px;
+    /*width: 900px;*/
 }
+
 nav {
     width: 900px;
     margin-top: 25px;
 }
+
 aside {
     position: relative;
-    float:left;
+    float: left;
     width: 250px;
     margin-top: 25px;
 }
+
 div[role=main] {
     position: relative;
     float: left;
@@ -53,29 +52,54 @@ div[role=main] {
     margin-top: 25px;
     margin-left: 20px;
 }
+
 footer {
     clear: both;
     width: 900px;
     text-align: center;
     font-size: 11px;
 }
+
+#registracija {
+    float: left;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+#prijava {
+    float: left;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#logo {
+    float: left;
+}
 /*############################################*/
-/*???????????*/
+
 /*############################################*/
+#webservice {
+    //clear: both;
+}
+
 img {
     width: 60px;
     height: 60px;
     padding-top: 10px;
 }
+
 li::first-letter {
     text-transform: capitalize;
 }
+
 #nazivProjekta::first-letter {
     text-transform: capitalize;
 }
+
 a {
     text-decoration: none;
 }
+
 #todolists {
     padding-left: 0px;
     /*list-style-type: square;*/
@@ -84,8 +108,7 @@ a {
 /*Lista s popisom projekata*/
 .list {
     font-size: 14px;
-   /* border: 1px solid red;*/
-    
+    /* border: 1px solid red;*/
 }
 /*
 .itemTdName, .doneItemTdName {
@@ -94,18 +117,21 @@ a {
 }
 */
 /*Link za dodavanje novog projekta*/
-a#noviProjekt:link, a#noviProjekt:visited {
+a#noviProjekt:link, a#noviProjekt:visited, a#delProjekt:link, a#delProjekt:visited {
     color: red;
 }
+
 a#noviProjekt:hover {
     text-decoration: underline;
     color: red;
 }
+
 a#noviProjekt:active {
     color: orange;
 }
+    /*
 /*Link kreira novi projekt*/
-a#novi:link, a#novi:visited {
+/*a#novi:link, a#novi:visited {
     text-decoration: none;
     color: white;
     border: 1px solid blue;
@@ -113,52 +139,63 @@ a#novi:link, a#novi:visited {
     background-color: red;
     padding: 2px 4px;
 }
+
 a#novi:hover {
     text-decoration: none;
     color: white;
     border: 1px solid blue;
     background-color: orange;
+    cursor: pointer;
 }
+
 a#novi:hover {
     text-decoration: none;
     color: white;
     border: 1px solid blue;
     background-color: red;
-}
+}*/
 /*Link za odustajanje od kreiranja projekta*/
-a#odustani:link, a#odustani:visited {
+/*a#odustani:link, a#odustani:visited {
     color: black;
 }
+
 a#odustani:hover {
     text-decoration: underline;
     color: black;
 }
+
 a#odustani:active {
     color: orange;
+}*/
+/*
+#frmlogin {
+    visibility:hidden;
 }
-
+#frmregistacija {
+    visibility:hidden;
+}
+*/
+#prijavaDiv, #registracijaDiv {
+    visibility: hidden;
+}
 /*############################################*/
-/*Unos stavki putem input polja i drag and drop*/
+/**/
 /*############################################*/
 
-/*TESTIRANJE DRAG AND DROP*/
-ul {
-    /*border: 1px dashed red;*/
-}
-td {
-   /* border: 1px dashed blue;*/
-}
 /*sljedeća 3 su polja u kojima su aktivni i gotovi zadaci*/
 .input {
     width: 30px;
 }
+
 .checked {
-   text-decoration: line-through; 
+    text-decoration: line-through;
 }
+
 .todoList {
     padding-left: 10px;
     background-color: silver;
 }
+
 #doneItemList, #toDoItemList {
     /*border: 1px solid red;*/
     width: 500px;
@@ -171,6 +208,7 @@ td {
     float: left;
     /*border: 1px solid green;*/
 }
+
 .red {
     color: red;
 }
@@ -186,9 +224,83 @@ td {
     position: relative;
     float: left;
 }
+
 #allTasks {
     border: 1px solid black;
     width: 250px;
     min-height: 400px;
     margin-top: 20px;
 }
+/*p*/
+body {
+    background: #87cefa;
+}
+
+#container {
+    background: White;
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    min-height: 300px;
+    
+}
+
+footer {
+    padding: 5px;
+    clear: both;
+    font-size: x-small;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#prijavaDiv {
+    background: gray;
+    color: White;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.stupac {
+    background: gray;
+    padding: 5px;
+    color: White;
+    width: 100px;
+}
+
+#registracijaDiv table {
+}
+
+/*
+
+generalni stilovi
+
+*/
+
+table {
+    border-collapse: collapse;
+}
+
+input {
+    border: 1px solid Gray;
+}
+
+.list {
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.controlLi2 {
+    padding: 10px 10px 15px 10px;
+    text-align: center;
+    border-bottom: 2px solid Red;
+}
+
+    .controlLi2 a:first-child {
+        color: red;
+    }
+
+        .controlLi2 a:first-child:hover {
+            text-decoration: underline;
+        }

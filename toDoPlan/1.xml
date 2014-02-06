@@ -1,37 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <lists>
   <list>
-    <name>Ronilačka oprema</name>
-    <openitems>
-      <item>Odjelo</item>
-      <item>Maska i disalica</item>
-      <item>Peraje</item>
-      <item>Rukavice</item>
-      <item>Pojas s olovom</item>
-    </openitems>
-    <doneitems>
-      <item>Ribolovna dozvola</item>
-      <item>Sigurnosna bova</item>
-    </doneitems>
-  </list>
-  <list>
-    <name>Trip to Thailand</name>
-    <openitems>
-      <item>Karta</item>
-      <item>Zdravstveno osiguranje</item>
-      <item>Putovnica</item>
-      <item>Lonely Planet</item>
-      <item>Baterija za glavu</item>
-      <item>Swiss knife</item>
-    </openitems>
-    <doneitems>
-      <item>US$</item>
-      <item>Fotoaparat</item>
-      <item>First Aid</item>
-      <item>Ruksak</item>
-    </doneitems>
-  </list>
-  <list>
     <name>DOM i JavaScript</name>
+    <openitems>
+      <item>Polja</item>
+      <item>funkcije</item>
+      <item>JavaScript</item>
+      <item>DOM </item>
+    </openitems>
+    <doneitems>
+      <item>Events</item>
+      <item>dom core</item>
+    </doneitems>
   </list>
 </lists>
