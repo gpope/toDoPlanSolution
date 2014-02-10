@@ -1,17 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <lists>
   <list>
-    <name>RTL TV</name>
+    <name>NOVI</name>
     <openitems>
-      <item>novi</item>
     </openitems>
     <doneitems>
-      <item>Reklama</item>
     </doneitems>
   </list>
   <list>
-    <name>Radio Antena</name>
+    <name>NOVIJI</name>
     <openitems>
+      <item>nešto</item>
     </openitems>
     <doneitems>
     </doneitems>

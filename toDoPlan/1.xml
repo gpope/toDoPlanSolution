@@ -4,13 +4,20 @@
     <name>DOM i JavaScript</name>
     <openitems>
       <item>Polja</item>
-      <item>funkcije</item>
+      <item>Funkcije</item>
       <item>JavaScript</item>
-      <item>DOM </item>
     </openitems>
     <doneitems>
       <item>Events</item>
-      <item>dom core</item>
+      <item>DOM core</item>
+      <item>DOM HTML</item>
+    </doneitems>
+  </list>
+  <list>
+    <name>DOM</name>
+    <openitems>
+    </openitems>
+    <doneitems>
     </doneitems>
   </list>
 </lists>

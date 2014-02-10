@@ -1,7 +1,4 @@
-﻿/*############################################*/
-/*Strukturni djelovi web-a*/
-/*############################################*/
-body {
+﻿body {
     font-family: Verdana;
     font-size: 14px;
     -webkit-user-select: none;
@@ -20,17 +17,6 @@ h2 {
     font-size: 14px;
     font-weight: 700;
     padding-left: 0px;
-}
-/*
-#container {
-    position: relative;
-    margin: 0 auto;
-    width: 900px;
-    min-height: 600px;
-}
-*/
-header {
-    /*width: 900px;*/
 }
 
 nav {
@@ -75,12 +61,6 @@ footer {
 #logo {
     float: left;
 }
-/*############################################*/
-
-/*############################################*/
-#webservice {
-    //clear: both;
-}
 
 img {
     width: 60px;
@@ -102,21 +82,13 @@ a {
 
 #todolists {
     padding-left: 0px;
-    /*list-style-type: square;*/
     list-style-type: none;
 }
-/*Lista s popisom projekata*/
+
 .list {
     font-size: 14px;
-    /* border: 1px solid red;*/
 }
-/*
-.itemTdName, .doneItemTdName {
-    border-bottom: 1px solid black;
-    min-width: 300px;
-}
-*/
-/*Link za dodavanje novog projekta*/
+
 a#noviProjekt:link, a#noviProjekt:visited, a#delProjekt:link, a#delProjekt:visited {
     color: red;
 }
@@ -129,60 +101,11 @@ a#noviProjekt:hover {
 a#noviProjekt:active {
     color: orange;
 }
-    /*
-/*Link kreira novi projekt*/
-/*a#novi:link, a#novi:visited {
-    text-decoration: none;
-    color: white;
-    border: 1px solid blue;
-    border-radius: 3px;
-    background-color: red;
-    padding: 2px 4px;
-}
 
-a#novi:hover {
-    text-decoration: none;
-    color: white;
-    border: 1px solid blue;
-    background-color: orange;
-    cursor: pointer;
-}
-
-a#novi:hover {
-    text-decoration: none;
-    color: white;
-    border: 1px solid blue;
-    background-color: red;
-}*/
-/*Link za odustajanje od kreiranja projekta*/
-/*a#odustani:link, a#odustani:visited {
-    color: black;
-}
-
-a#odustani:hover {
-    text-decoration: underline;
-    color: black;
-}
-
-a#odustani:active {
-    color: orange;
-}*/
-/*
-#frmlogin {
-    visibility:hidden;
-}
-#frmregistacija {
-    visibility:hidden;
-}
-*/
 #prijavaDiv, #registracijaDiv {
     visibility: hidden;
 }
-/*############################################*/
-/**/
-/*############################################*/
 
-/*sljedeća 3 su polja u kojima su aktivni i gotovi zadaci*/
 .input {
     width: 30px;
 }
@@ -197,7 +120,6 @@ a#odustani:active {
 }
 
 #doneItemList, #toDoItemList {
-    /*border: 1px solid red;*/
     width: 500px;
     margin-top: 20px;
 }
@@ -206,20 +128,12 @@ a#odustani:active {
 #divDoneItemList, #divToDoItemList {
     position: relative;
     float: left;
-    /*border: 1px solid green;*/
 }
 
 .red {
     color: red;
 }
-/*
-.doneItemTdName {
-    text-decoration: line-through;
-}
- */
-/*############################################*/
-/*Unos taskova iz xml-a*/
-/*############################################*/
+
 #divTasks {
     position: relative;
     float: left;
@@ -231,7 +145,7 @@ a#odustani:active {
     min-height: 400px;
     margin-top: 20px;
 }
-/*p*/
+
 body {
     background: #87cefa;
 }
@@ -272,12 +186,6 @@ footer {
 #registracijaDiv table {
 }
 
-/*
-
-generalni stilovi
-
-*/
-
 table {
     border-collapse: collapse;
 }
@@ -297,10 +205,10 @@ input {
     border-bottom: 2px solid Red;
 }
 
-    .controlLi2 a:first-child {
-        color: red;
-    }
+.controlLi2 a:first-child {
+    color: red;
+}
 
-        .controlLi2 a:first-child:hover {
-            text-decoration: underline;
-        }
+.controlLi2 a:first-child:hover {
+    text-decoration: underline;
+}
