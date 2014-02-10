@@ -34,7 +34,7 @@ namespace toDoPlan
         /// </summary>
         /// <param name="name">email</param>
         /// <param name="pass">lozinka</param>
-        /// <returns>true ili false</returns>
+        /// <returns>bool</returns>
         [WebMethod (EnableSession = true)]
         public bool ProvjeriKorisnika(string name, string pass) {
             string filePath = Path.Combine(HttpRuntime.AppDomainAppPath, "user.xml");
@@ -116,7 +116,7 @@ namespace toDoPlan
         /// </summary>
         /// <param name="taskName">ime zadatka</param>
         /// <param name="projName">ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool AddTask(string taskName, string projName)
         {
@@ -152,7 +152,7 @@ namespace toDoPlan
         /// <param name="taskName">ime zadatka</param>
         /// <param name="parentId">id roditelja</param>
         /// <param name="projName">ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool DeleteTask(string taskName, string parentId, string projName)
         {
@@ -223,7 +223,7 @@ namespace toDoPlan
         /// <param name="newTaskName">novo ime zadatka</param>
         /// <param name="parentId">id roditelja</param>
         /// <param name="projName">ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool RenameTask(string taskName, string newTaskName, string parentId, string projName)
         {
@@ -248,7 +248,6 @@ namespace toDoPlan
                                 {
                                     var r = taskovi[j].ParentNode;
                                     var c = r.ChildNodes[j];
-                                    //r.RemoveChild(r.ChildNodes[j]); 
                                     XmlNode noviE = xmlDoc.CreateElement("item");
                                     XmlNode noviT = xmlDoc.CreateTextNode(newTaskName);
                                     noviE.AppendChild(noviT);
@@ -276,7 +275,6 @@ namespace toDoPlan
                                 {
                                     var r = taskovi[j].ParentNode;
                                     var c = r.ChildNodes[j];
-                                    //r.RemoveChild(r.ChildNodes[j]);
                                     XmlNode noviE = xmlDoc.CreateElement("item");
                                     XmlNode noviT = xmlDoc.CreateTextNode(newTaskName);
                                     noviE.AppendChild(noviT);
@@ -300,7 +298,7 @@ namespace toDoPlan
         /// Briše cijeli projekt s svim zadacima
         /// </summary>
         /// <param name="projName">ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool DeleteProject(string projName)
         {
@@ -364,11 +362,10 @@ namespace toDoPlan
         /// </summary>
         /// <param name="novoIme">novo ime</param>
         /// <param name="staroIme">staro ime</param>
-        /// <returns>true ili false</returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool RenameProject(string novoIme, string staroIme)
-        {
-            //string imeXML = "";
+        {           
             string imeXML = GetSessionUserId();
             if (imeXML != "false")
             {
@@ -381,15 +378,8 @@ namespace toDoPlan
                 for (int i = 0; i < projektB.Count; i++)
                 {
                     if (projektB[i].ChildNodes[0].Value == staroIme)
-                    {
-                        //var rod = projektB[i].ParentNode.ParentNode;
-                        //XmlNodeList liste = xmlDoc.GetElementsByTagName("lists");
-                        
-                        
-                        //XmlNode novi = xmlDoc.CreateElement("name");                       
+                    {                 
                         XmlNode noviT = xmlDoc.CreateTextNode(novoIme);
-                        //novi.AppendChild(noviT);
-
                         projektB[i].ReplaceChild(noviT ,projektB[i].ChildNodes[0]);
                         xmlDoc.Save(filePath);
                         break;
@@ -436,7 +426,7 @@ namespace toDoPlan
         /// <param name="taskName">ime zadatka</param>
         /// <param name="parentId">id roditelja</param>
         /// <param name="projName">ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod(EnableSession = true)]
         public bool ChangeTaskStatus(string taskName, string parentId, string projName)
         {
@@ -513,7 +503,7 @@ namespace toDoPlan
         /// <param name="korIme">ime korisnika</param>
         /// <param name="email">email</param>
         /// <param name="lozinka">lozinka</param>
-        /// <returns></returns>
+        /// <returns>ok ili not</returns>
         [WebMethod(EnableSession = true)]
         public string RegistracijaKorisnika(string korIme, string email, string lozinka)
         {
@@ -587,7 +577,7 @@ namespace toDoPlan
         /// i u XML datoteku koja se odnosi na projekte specificiranog korisnika
         /// </summary>
         /// <param name="name">Ime projekta</param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         [WebMethod (EnableSession = true)]
         public bool UpdateXML(string name) 
         {
