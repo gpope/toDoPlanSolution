@@ -7,27 +7,6 @@
     <email>gopopovi@foi.hr</email>
     <lists>
       <list>DOM i JavaScript</list>
-      <list>DOM</list>
-    </lists>
-  </user>
-  <user>
-    <name>Iva</name>
-    <userid>2</userid>
-    <password>iva</password>
-    <email>iva@iva.com</email>
-    <lists>
-      <list>RTL TV</list>
-      <list>Radio Antena</list>
-    </lists>
-  </user>
-  <user>
-    <name>ivan</name>
-    <userid>3</userid>
-    <password>ivan</password>
-    <email>ivan@ivan.com</email>
-    <lists>
-      <list>NOVI</list>
-      <list>NOVIJI</list>
     </lists>
   </user>
 </users>

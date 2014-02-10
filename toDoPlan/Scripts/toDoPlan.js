@@ -81,30 +81,6 @@ function addToDoItem() {
         }
         else {
 
-            var tr = document.createElement("tr");
-            var items = "item";
-            tr.setAttribute('class', items);
-            tr.setAttribute('id', itemId);
-
-            var task = "<td class = 'input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + txtInput + "' /></td><td onclick = 'editItem(this.parentNode.id)' class='itemTdName'>" + txtInput + "</td>";
-
-            tr.innerHTML = task;
-            var list = document.getElementById("toDoItemList");
-            //kada se kreira 1. task za novi projekt kreira tbody
-            if (list.childNodes.length == 0) {
-                var tb = document.createElement('TBODY');
-                tb.appendChild(tr);
-                list.appendChild(tb);
-            }
-            else {
-                list.firstChild.appendChild(tr);
-            }
-
-            itemCount++;
-            itemId = "item" + itemCount;
-            document.getElementById('toDoInput').value = "";
-            document.getElementById('toDoInput').focus();
-
             //varijable koje se predaju metodi AddTask
             var remVal = txtInput;
             var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
@@ -130,6 +106,30 @@ function addToDoItem() {
                             document.getElementById("central").style.visibility = "visible";
                             document.getElementById("central").style.display = "block";
                             document.getElementById("zadaci").innerHTML = "Zadaci";
+                            //
+                            var tr = document.createElement("tr");
+                            var items = "item";
+                            tr.setAttribute('class', items);
+                            tr.setAttribute('id', itemId);
+
+                            var task = "<td class = 'input'><input type = 'checkbox' onclick = 'changeStatus(this.parentNode.parentNode.id)' /><input type='text' class='skriveni' style='display: none;' value='" + txtInput + "' /></td><td onclick = 'editItem(this.parentNode.id)' class='itemTdName'>" + txtInput + "</td>";
+
+                            tr.innerHTML = task;
+                            var list = document.getElementById("toDoItemList");
+                            //kada se kreira 1. task za novi projekt kreira tbody
+                            if (list.childNodes.length == 0) {
+                                var tb = document.createElement('TBODY');
+                                tb.appendChild(tr);
+                                list.appendChild(tb);
+                            }
+                            else {
+                                list.firstChild.appendChild(tr);
+                            }
+
+                            itemCount++;
+                            itemId = "item" + itemCount;
+                            document.getElementById('toDoInput').value = "";
+                            document.getElementById('toDoInput').focus();
                         }
                         else
                             pocetnoSucelje();
@@ -157,27 +157,9 @@ function changeStatus(id) {
     var remVal = document.getElementById(id).childNodes[1].childNodes[0].nodeValue;//naziv zadatka kojem se mijenja status
     var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;//naziv projekta
 
-
+    
     if (inp.checked) {
-        //zadatak čekiran, prebaci ga u listu čekiranih   
-        red.setAttribute('class', checked);
-        inp.setAttribute('checked');
-
-        //prebaci ga u čekirane      
-        var cklon = preb.cloneNode(true);
-        var dIL = document.getElementById("doneItemList").firstChild;
-
-        if (dIL == undefined) {//tbody nema kad se 1. put prebaci
-            dIL = document.getElementById("doneItemList");
-            var tbody = document.createElement('tbody');
-            dIL.appendChild(tbody);
-            dIL.firstChild.appendChild(cklon);
-        }
-        else
-            dIL.appendChild(cklon);
-
-        preb.parentNode.removeChild(preb);
-
+        
         //podaci za slanje metodi ChangeTaskStatus(taskName, parentId, projName)
         var remTable = "toDoItemList";
         var poruka = "taskName=" + remVal + "&parentId=" + remTable + "&projName=" + nazProj;
@@ -199,6 +181,26 @@ function changeStatus(id) {
                     var req = request.responseXML.childNodes[0].firstChild.data;
                     if (req == "true") {
                         document.getElementById("zadaciZavrseni").innerHTML = "Završeni zadaci";
+                        
+                        //zadatak čekiran, prebaci ga u listu čekiranih   
+                        red.setAttribute('class', checked);
+                        inp.setAttribute('checked');
+
+                        //prebaci ga u čekirane      
+                        var cklon = preb.cloneNode(true);
+                        var dIL = document.getElementById("doneItemList").firstChild;
+
+                        if (dIL == undefined) {//tbody nema kad se 1. put prebaci
+                            dIL = document.getElementById("doneItemList");
+                            var tbody = document.createElement('tbody');
+                            dIL.appendChild(tbody);
+                            dIL.firstChild.appendChild(cklon);
+                        }
+                        else
+                            dIL.appendChild(cklon);
+
+                        preb.parentNode.removeChild(preb);
+                       
                     } else
                         pocetnoSucelje();
                 }
@@ -209,22 +211,7 @@ function changeStatus(id) {
         }
     }
     else {
-        //zadatak odčekiran, prebaci ga u listu odčekiranih
-        red.setAttribute('class', unchecked);
-        inp.removeAttribute('checked');
-        //prebaci ga u odčekirano
-        var uklon = preb.cloneNode(true);
-        var tDIL = document.getElementById("toDoItemList").firstChild;
-
-        if (tDIL == undefined) {
-            tDIL = document.getElementById("toDoItemList");
-            var tableBody = document.createElement('tbody');
-            tDIL.appendChild(tableBody);
-        }
-        //
-        tDIL.appendChild(uklon);
-        preb.parentNode.removeChild(preb);
-
+        
         //podaci za slanje servisu ChangeTaskStatus(taskName, parentId, projName) 
         var remTable = "doneItemList";
         var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
@@ -247,6 +234,21 @@ function changeStatus(id) {
                 if (request.readyState == 4) {
                     var req = request.responseXML.childNodes[0].firstChild.data;
                     if (req == "true") {
+                        //zadatak odčekiran, prebaci ga u listu odčekiranih
+                        red.setAttribute('class', unchecked);
+                        inp.removeAttribute('checked');
+                        //prebaci ga u odčekirano
+                        var uklon = preb.cloneNode(true);
+                        var tDIL = document.getElementById("toDoItemList").firstChild;
+
+                        if (tDIL == undefined) {
+                            tDIL = document.getElementById("toDoItemList");
+                            var tableBody = document.createElement('tbody');
+                            tDIL.appendChild(tableBody);
+                        }
+                        
+                        tDIL.appendChild(uklon);
+                        preb.parentNode.removeChild(preb);
                         
                     } else
                         pocetnoSucelje();
@@ -271,7 +273,7 @@ function zamjeniIme(val, parid) {
         if(dupli){
         
 
-        tr.childNodes[1].innerHTML = val;
+        //tr.childNodes[1].innerHTML = val;
         var staroIme = tr.childNodes[0].childNodes[1].value;
         tr.childNodes[0].childNodes[1].value = val;
 
@@ -299,7 +301,7 @@ function zamjeniIme(val, parid) {
                 if (request.readyState == 4) {
                     var req = request.responseXML.childNodes[0].firstChild.data;
                     if (req == "true") {
-                     
+                        tr.childNodes[1].innerHTML = val;
                     }
                     else
                         pocetnoSucelje();
@@ -326,11 +328,10 @@ function brisiIme(parid) {
         if (tr.parentNode.childNodes[i].id == parid)
             moj = i;
     var rod = tr.parentNode;
-
     var dije = rod.childNodes[moj];
-    rod.removeChild(dije);
+    
     //podaci za slanje servis metodi DeleteTask
-    var remVal = dije.childNodes[1].childNodes[0].value;
+    var remVal = tr.childNodes[0].childNodes[1].value;
     var remTable = rod.parentNode.id;
     var nazProj = document.getElementById("nazivProjekta").childNodes[0].nodeValue;
     //bool DeleteTask(string taskName, string parentId, string projName)
@@ -353,7 +354,7 @@ function brisiIme(parid) {
             if (request.readyState == 4) {
                 var req = request.responseXML.childNodes[0].firstChild.data;
                 if (req == "true") {
-
+                    rod.removeChild(dije);
                 } else
                     pocetnoSucelje();
             }
@@ -797,47 +798,51 @@ function editProject(ime) {
 //Funkcija mjenja ime projekta
 //#########################################################################
 function izmjeniNazivPr() {
-
+    
     var textInput = this.previousSibling;
-    var textLabel = this.parentNode.previousSibling.childNodes[1].childNodes[0];
-    makniAktivne();
-    var dupli = provjeriDupleProj(textInput.value);
-    if (!dupli) {
-        var poruka = "novoIme=" + textInput.value + "&staroIme=" + textLabel.nodeValue;
-        var request = null;
-        if (window.XMLHttpRequest) {
-            request = new XMLHttpRequest();
-        } else {
-            request = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        var the_URL = "servisi.asmx/RenameProject";
+    if (textInput.value == "") {
+        textInput.focus();
+    } else {
 
-        if (request) {
-            request.open("POST", the_URL);
-            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-            request.onreadystatechange =
-            function () {
-                if (request.readyState == 4) {
-                    var req = request.responseXML.childNodes[0].firstChild.data;
-                    if (req == "true") {
-                       //ime projekta promijenjeno
-                        GetSessionEmail();
-                        addList(textInput.value);
-                    }
-                    else {
-                        pocetnoSucelje();
-                    }
-
-                }
+        var textLabel = this.parentNode.previousSibling.childNodes[1].childNodes[0];
+        makniAktivne();
+        var dupli = provjeriDupleProj(textInput.value);
+        if (!dupli) {
+            var poruka = "novoIme=" + textInput.value + "&staroIme=" + textLabel.nodeValue;
+            var request = null;
+            if (window.XMLHttpRequest) {
+                request = new XMLHttpRequest();
+            } else {
+                request = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            request.send(poruka);
+            var the_URL = "servisi.asmx/RenameProject";
 
-        } else {
-            alert("Problemi u radu servera, pokušajte kasnije.");
-        }
-    } else
-        alert("Projekt s tim imenom postoji.");
+            if (request) {
+                request.open("POST", the_URL);
+                request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+                request.onreadystatechange =
+                function () {
+                    if (request.readyState == 4) {
+                        var req = request.responseXML.childNodes[0].firstChild.data;
+                        if (req == "true") {
+                            //ime projekta promijenjeno
+                            GetSessionEmail();
+                            addList(textInput.value);
+                        }
+                        else {
+                            pocetnoSucelje();
+                        }
 
+                    }
+                }
+                request.send(poruka);
+
+            } else {
+                alert("Problemi u radu servera, pokušajte kasnije.");
+            }
+        } else
+            alert("Projekt s tim imenom postoji.");
+    }
 }
 //#########################################################################
 //Pomoćna funkcija koja onemogućava istovremeno editiranje više projekata 

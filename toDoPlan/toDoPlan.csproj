@@ -62,9 +62,6 @@
     </Content>
     <Content Include="CSS\default.css" />
     <Content Include="default.html" />
-    <Content Include="2.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
